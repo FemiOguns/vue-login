@@ -30,24 +30,14 @@
 </template>
 
 <script>
-import { useStore } from 'vuex'
-const Captcha =()=> import('@/components/dev/capthca.vue')
-
 export default {
   name: 'login',
-  setup() {
-    const store = useStore()
-  },
   data: ()=> ({
     cred: {
       email: null,
       password: null
     },
-    show: true,
-    tmp: {
-      email: 'belal_email@gmail.com',
-      password: 'password123'
-    }
+    show: true
   }),
   methods: {
     onSubmit(evt) {
@@ -64,9 +54,6 @@ export default {
       this.show = false
       this.$nextTick(() => { Object.asign({}, this.cred) })
     }
-  },
-  components: {
-    Captcha
   }
 }
 </script>

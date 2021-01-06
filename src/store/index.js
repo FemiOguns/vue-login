@@ -29,6 +29,7 @@ export default createStore({
           let { user } = res.json()
           commit('set_current_user', user)
           commit('set_auth_status',true)
+          resolve(res.json())
         }).catch(err => { reject(); throw err })
       })
     },
@@ -44,6 +45,9 @@ export default createStore({
           }
         );
         await fetch(request).then((res) => {
+          let { user } = res.json()
+          commit('set_current_user', user)
+          commit('set_auth_status',true)
           resolve(res.json())
         }).catch(err => { reject(); throw err })
       })

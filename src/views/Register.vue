@@ -6,7 +6,7 @@
           <div class="col-lg-12">
             <h1 class="text-uppercase font-weight-bold">Create Account.</h1>
           </div>
-          <form class="col-lg-12" @submit="onSubmit" @reset="onReset">
+          <form v-if="show" class="col-lg-12" @submit="onSubmit" @reset="onReset">
             <div class="form-floating">
               <label class="text-uppercase">username</label>
               <input class="form-control" v-model="cred.email" type="email" required>
