@@ -6,7 +6,7 @@
           <div class="col-lg-12">
             <h1>Login.</h1>
           </div>
-          <form v-if="show" class="col-lg-12" @submit="onSubmit" @reset="onReset">
+          <form class="col-lg-12" @submit="onSubmit" @reset="onReset">
             <div class="form-floating">
               <label class="text-uppercase">username</label>
               <input class="form-control" v-model="cred.email" type="email" required>
@@ -36,8 +36,7 @@ export default {
     cred: {
       email: null,
       password: null
-    },
-    show: true
+    }
   }),
   methods: {
     onSubmit(evt) {
@@ -51,7 +50,6 @@ export default {
     onReset(evt) {
       evt.preventDefault()
       Object.assign({}, this.cred)
-      this.show = false
       this.$nextTick(() => { Object.asign({}, this.cred) })
     }
   }
@@ -73,11 +71,14 @@ export default {
     background-size: cover;
     background-position: center;
       .card {
-        margin-top: 75px;
         height: auto;
         background: white;
         text-align: center;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
           h1 {
             margin-top: 15px;
             text-align: center;
