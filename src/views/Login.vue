@@ -2,7 +2,7 @@
   <div id="login">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-md-8 card">
+        <div class="col-lg-6 col-md-8 rounded-3 shadow shadow-lg card">
           <div class="col-lg-12">
             <h1>Login.</h1>
           </div>
@@ -18,7 +18,7 @@
             <capthca />
             <div class="col-lg-12">
               <button type="submit" class="btn btn-primary btn-block">Log in</button>
-              <div class="px-3 text-center">
+              <div class="py-3 text-center">
                   <router-link class="text-secondary" to="/register">Don't have an account</router-link>
                 </div>
             </div>
@@ -72,9 +72,6 @@ export default {
     background-position: center;
       .card {
         height: auto;
-        background: white;
-        text-align: center;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         position: absolute;
         top: 50%;
         left: 50%;
