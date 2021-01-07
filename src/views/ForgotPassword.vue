@@ -6,16 +6,7 @@
                     <div class="col-lg-12">
                         <h1>Forgot Password.</h1>
                     </div>
-                    <form class="col-lg-12" @submit="onSubmit" @reset="onReset">
-                        <div class="form-floating">
-                            <label class="text-uppercase">username</label>
-                            <input class="form-control" v-model="username" type="email" required>
-                        </div>
-                        <div class="col-lg-12">
-                            <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
-                            <p class="pt-3 text-center text-secondary">Already have an account.</p>
-                        </div>
-                    </form>
+                    <Stepper />
                 </div>
             </div>
         </div>
@@ -23,6 +14,8 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
+const Stepper = defineAsyncComponent(() => import('@/components/Stepper.vue'))
 export default {
     name: 'forgot-password',
     data: ()=> ({
@@ -33,6 +26,9 @@ export default {
             evt.preventdefault()
             console.log(this.username)
         }
+    },
+    components: {
+        Stepper
     }
 }
 </script>

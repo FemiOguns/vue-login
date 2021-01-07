@@ -6,57 +6,101 @@
           <div class="col-lg-12">
             <h1 class="text-uppercase font-weight-bold">Create Account.</h1>
           </div>
-        <form class="col-lg-12" @submit="onSubmit" @reset="onReset">
-          <div id="register-slider" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-bs-target="#register-slider" data-bs-slide-to="0"></li>
-              <li data-bs-target="#register-slider" data-bs-slide-to="1"></li>
-              <li data-bs-target="#register-slider" data-bs-slide-to="2"></li>
-              <li data-bs-target="#register-slider" data-bs-slide-to="3"></li>
-            </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="form-floating">
-                    <h3 class="text-center">Whats your name?</h3>
-                    <input class="form-control border border-dark" v-model="user.name" type="text" required>
+            <div ref="register_stepper" id="register_stepper" class="bs-stepper">
+              <div class="bs-stepper-header">
+                  <div class="step" data-target="#step-1">
+                      <button class="step-trigger">
+                          <span class="bs-stepper-circle">1</span>
+                          <span class="bs-stepper-label">Email</span>
+                      </button>
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="form-floating">
-                    <h3 class="text-center">Whats your email address?</h3>
-                    <input class="form-control border border-dark" v-model="user.email" type="email" required>
+                  <div class="line"></div>
+                  <div class="step" data-target="#step-2">
+                      <button class="step-trigger">
+                          <span class="bs-stepper-circle">2</span>
+                          <span class="bs-stepper-label">Password</span>
+                      </button>
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="form-floating">
-                    <h3 class="text-center">Choose your password</h3>
-                    <input class="form-control border border-dark" v-model="user.password" type="password" required>
-                    <input class="form-control border border-dark" v-model="user.password2" type="password" required>
+                  <div class="line"></div>
+                  <div class="step" data-target="#step-3">
+                      <button class="step-trigger">
+                          <span class="bs-stepper-circle">3</span>
+                          <span class="bs-stepper-label">Confirm Password</span>
+                      </button>
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="form-floating">
-                    <h3 class="text-center">Whats your phone number?</h3>
-                    <input class="form-control border border-dark" v-model="user.phone" type="tel" required>
+                  <div class="line"></div>
+                  <div class="step" data-target="#step-5">
+                      <button class="step-trigger">
+                          <span class="bs-stepper-circle">5</span>
+                          <span class="bs-stepper-label">Mobile Phone</span>
+                      </button>
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="form-floating">
-                    <h3 class="text-center">Whats your dob?</h3>
-                    <input class="form-control border border-dark" v-model="user.dob" type="date" required>
+                  <div class="line"></div>
+                  <div class="step" data-target="#step-6">
+                      <button class="step-trigger">
+                          <span class="bs-stepper-circle">6</span>
+                          <span class="bs-stepper-label">6-Digit Code</span>
+                      </button>
                   </div>
-                  <button type="submit" v-if="user != null" class="btn btn-danger btn-block">Register</button>
-                </div>
+                  <div class="line"></div>
+                  <div class="step" data-target="#step-7">
+                      <button class="step-trigger">
+                          <span class="bs-stepper-circle">7</span>
+                          <span class="bs-stepper-label">Submit</span>
+                      </button>
+                  </div>
               </div>
-              <div class="bg-dark py-2">
-                <a class="carousel-control-prev" href="#register-slider" role="button" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#register-slider" role="button" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </a>
+              <div class="bs-stepper-content">
+                <form>
+                  <div id="step-1" class="content">
+                    <div class="form-group">
+                      <div class="form-floating">
+                        <label class="text-uppercase">username</label>
+                        <input class="form-control" v-model="user.email" type="email" required>
+                      </div>
+                      <button @click="next" class="btn btn-primary">Next</button>
+                    </div>
+                  </div>
+                  <div id="step-2" class="content">
+                    <div class="form-group">
+                      <div class="form-floating">
+                        <label class="text-uppercase">password</label>
+                        <input class="form-control" v-model="user.password" type="password" required>
+                      </div>
+                      <button @click="next" class="btn btn-primary">Next</button>
+                    </div>
+                    </div>
+                  <div id="step-3" class="content">
+                    <div class="form-group">
+                      <div class="form-floating">
+                        <label class="text-uppercase">confirm</label>
+                        <input class="form-control" v-model="re_pass" type="password" required>
+                      </div>
+                      <button @click="next" class="btn btn-primary">Next</button>
+                    </div>
+                    </div>
+                  <div id="step-4" class="content">
+                    <div class="form-group">
+                      <div class="form-floating">
+                        <label class="text-uppercase">Phone Number</label>
+                        <input class="form-control" v-model="user.phone_number" type="tel" required>
+                      </div>
+                      <button @click="next" class="btn btn-primary">Next</button>
+                    </div>
+                    </div>
+                  <div id="step-5" class="content">
+                    <div class="form-group">
+                      <div class="form-floating">
+                        <label class="text-uppercase">6 Digit Code</label>
+                        <input class="form-control" v-model="code" type="text" maxlength="6"  required>
+                      </div>
+                      <button @click="next" class="btn btn-primary">Next</button>
+                    </div>
+                    </div>
+                    <div id="step-6" class="content text-center">
+                        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                    </div>
+                </form>
               </div>
             </div>
             <div class="col-lg-12">
@@ -64,7 +108,6 @@
                 <router-link to="/login" class="text-secondary">Go Back</router-link>
               </div>
             </div>
-          </form>
         </div>
       </div>
     </div>
@@ -72,6 +115,8 @@
 </template>
 
 <script>
+import Stepper from 'bs-stepper'
+
 export default {
   name: 'register',
   data: ()=> ({
@@ -79,23 +124,27 @@ export default {
       email: null,
       password: null,
       name: null,
-      dob: null,
-      phone: null
-    }
+      phone_number: null
+    },
+    code: null,
+    re_pass: null
   }),
+  mounted() {
+    this.stepper = new Stepper(this.$refs.register_stepper, {
+        linear: false,
+        animation: true
+    })
+  },
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
       alert()
       this.$store.dispatch('register', this.user).then((user) => {
-        alert(`Welcome Back ${user}`)
         this.$nextTick(() => { this.$router.replace('/home') })
       })
     },
     onReset(evt) {
       evt.preventDefault()
-      Object.assign({}, this.cred)
-      this.show = false
       this.$nextTick(() => { Object.asign({}, this.cred) })
     }
   }
