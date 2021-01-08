@@ -15,7 +15,6 @@
               <label class="text-uppercase">password</label>
               <input class="form-control" v-model="cred.password" type="password" required>
             </div>
-            <capthca />
             <div class="col-lg-12">
               <button type="submit" class="btn btn-primary btn-block">Log in</button>
               <div class="py-3 text-center">
@@ -52,7 +51,7 @@ export default {
             timeout: 1300
           })
         this.$nextTick(() => { this.$router.replace('/home') })
-      }).catch(err => this.toast.error(err.msg || "error_message"))
+      }).catch(err => this.toast.error(err || "error_message"))
     },
     onReset(evt) {
       evt.preventDefault()
