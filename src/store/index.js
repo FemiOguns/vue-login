@@ -17,7 +17,7 @@ export default createStore({
     login({commit}, payload) {
       return new Promise(async (resolve, reject) => {
         const request = new Request(
-          process.env.VUE_APP_API_URL+"/login",
+          process.env.VUE_APP_API+"/login",
           {
             method: 'POST',
             mode: 'cors',
@@ -41,7 +41,7 @@ export default createStore({
     register({commit}, payload) {
       return new Promise(async (resolve, reject) => {
         const request = new Request(
-          process.env.VUE_APP_API_URL+"/register",
+          process.env.VUE_APP_API+"/register",
           {
             method: 'POST',
             mode: 'cors',
