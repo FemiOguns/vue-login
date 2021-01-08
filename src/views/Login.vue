@@ -30,8 +30,14 @@
 </template>
 
 <script>
+import { useToast } from 'vue-toastification'
+
 export default {
   name: 'login',
+  setup() {
+    const toast = useToast();
+    return { toast }
+  },
   data: ()=> ({
     cred: {
       email: null,
@@ -41,11 +47,12 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      alert()
       this.$store.dispatch('login', this.cred).then((user) => {
-        alert(user.name ? `Welcome Back ${user.name}`: 'Hello')
+          this.toast.success(`Welcome Back ${user.name || "user_name"}`,{
+            timeout: 1300
+          })
         this.$nextTick(() => { this.$router.replace('/home') })
-      }).catch(err => console.error(err))
+      }).catch(err => this.toast.error(err.msg || "error_message"))
     },
     onReset(evt) {
       evt.preventDefault()

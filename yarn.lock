@@ -6747,11 +6747,6 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
-recaptcha-v3@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.8.0.tgz#b39ae7cba5322ed7027359c3f14502e44e909f83"
-  integrity sha512-ugtg4JHDZiYJwv3ZjWBBZntsTCVpRk2BD8AhVVpSw9jv71SSx+SS9H342VaE0D2XV78DpRdDuiMO9ZIgl4zI3A==
-
 redent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/redent/-/redent-1.0.0.tgz#cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde"
@@ -8134,13 +8129,6 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-recaptcha-v3@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-recaptcha-v3/-/vue-recaptcha-v3-2.0.0.tgz#d8fd29d74d159895f3c68dd9bcfd0d9538e38f00"
-  integrity sha512-33UEpaBoIHW2XWf+Kc+ny2ri7d2LN/UgaxUNqo30fSzAxmNc71E+/mJrSBhG95iaOQCzj54fxtz/KSfesSS5sA==
-  dependencies:
-    recaptcha-v3 "^1.8.0"
-
 vue-router@^4.0.0-0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.2.tgz#5702bf8fa14535b80142fde226bf41a84917b1f4"
@@ -8155,6 +8143,11 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
 vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
+
+vue-toastification@^2.0.0-rc.1:
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/vue-toastification/-/vue-toastification-2.0.0-rc.1.tgz#6a994c19635a493eec0ee290e84a966e07c709d2"
+  integrity sha512-hjauv/FyesNZdwcr5m1SCyvu1JmlB+Ts5bTptDLDmsYYlj6Oqv8NYakiElpCF+Abwkn9J/AChh6FwkTL1HOb7Q==
 
 vue@^3.0.0:
   version "3.0.5"

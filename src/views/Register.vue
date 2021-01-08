@@ -6,52 +6,45 @@
           <div class="col-lg-12">
             <h1 class="text-uppercase font-weight-bold">Create Account.</h1>
           </div>
-            <div ref="register_stepper" id="register_stepper" class="bs-stepper">
-              <div class="bs-stepper-header">
-                  <div class="step" data-target="#step-1">
-                      <button class="step-trigger">
+            <div ref="register_stepper" class="bs-stepper">
+              <div class="bs-stepper-header" role="tablist">
+                  <div class="step" data-target="#user-email">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="user-email" id="user-email-trigger">
                           <span class="bs-stepper-circle">1</span>
                           <span class="bs-stepper-label">Email</span>
                       </button>
                   </div>
                   <div class="line"></div>
-                  <div class="step" data-target="#step-2">
-                      <button class="step-trigger">
+                  <div class="step" data-target="#user-password">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="user-password" id="user-password-trigger">
                           <span class="bs-stepper-circle">2</span>
                           <span class="bs-stepper-label">Password</span>
                       </button>
                   </div>
                   <div class="line"></div>
-                  <div class="step" data-target="#step-3">
-                      <button class="step-trigger">
+                  <div class="step" data-target="#confirm-password">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="confirm-password" id="confirm-password-trigger">
                           <span class="bs-stepper-circle">3</span>
                           <span class="bs-stepper-label">Confirm Password</span>
                       </button>
                   </div>
                   <div class="line"></div>
-                  <div class="step" data-target="#step-5">
-                      <button class="step-trigger">
+                  <div class="step" data-target="#user-phone">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="user-phone" id="user-phone-trigger">
                           <span class="bs-stepper-circle">5</span>
                           <span class="bs-stepper-label">Mobile Phone</span>
                       </button>
                   </div>
                   <div class="line"></div>
-                  <div class="step" data-target="#step-6">
-                      <button class="step-trigger">
+                  <div class="step" data-target="#code">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="code" id="code-trigger">
                           <span class="bs-stepper-circle">6</span>
                           <span class="bs-stepper-label">6-Digit Code</span>
                       </button>
                   </div>
-                  <div class="line"></div>
-                  <div class="step" data-target="#step-7">
-                      <button class="step-trigger">
-                          <span class="bs-stepper-circle">7</span>
-                          <span class="bs-stepper-label">Submit</span>
-                      </button>
-                  </div>
               </div>
-              <div class="bs-stepper-content">
-                <form>
+              <form @submit="onSubmit" @reset="onReset">
+              <div class="bs-stepper-content fade">
                   <div id="step-1" class="content">
                     <div class="form-group">
                       <div class="form-floating">
@@ -100,8 +93,8 @@
                     <div id="step-6" class="content text-center">
                         <button type="submit" class="btn btn-primary mt-5">Submit</button>
                     </div>
-                </form>
               </div>
+                </form>
             </div>
             <div class="col-lg-12">
               <div class="py-3 text-center">
