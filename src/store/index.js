@@ -12,20 +12,14 @@ export default createStore({
   },
   actions: {
     login({commit}, payload) {
-      return new Promise(async (resolve, reject) => {
-        await fetch(api.postData('/login',payload)).then((res) => {
-          //commit('set_current_user', user)
-          //commit('set_auth_status',true)
-          resolve(res.json())
-        }).catch(err => { reject(); throw err })
-      })
+      api.login(payload).then((res) => {
+        return res.json()
+      }).catch((err) => console.error(err))
     },
     register({commit}, payload) {
-      return new Promise(async (resolve, reject) => {
-        await fetch(api.postData('/register',payload)).then((res) => {
-          resolve(res.json())
-        }).catch(err => { reject(); throw err })
-      })
+      api.register(payload).then((res) => {
+        return res.json()
+      }).catch((err) => console.error(err))
     }
   },
   modules: {

@@ -1,22 +1,24 @@
-let api = {
-    postData(route,payload) {
-        return new Request(
-            new String(process.env.VUE_APP_API+route),
-            {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
-                credentials: 'same-origin',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Headers': '*' 
-                },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer', 
-                body: JSON.stringify(payload) 
-            })
-    }
-}
+import axios from 'axios'
 
+let api = {
+    login(payload) {
+        return new Promise((resolve,reject) => {
+            axios.post(process.env.VUE_APP_API+"/login",payload).then((res) => {
+                resolve(res)
+            }).catch((err) => {
+                reject(err)
+            })
+        })
+    },
+    register(payload) {
+        return new Promise((resolve,reject) => {
+            axios.post(process.env.VUE_APP_API+"/register",payload).then((res) => {
+                resolve(res)
+            }).catch((err) => {
+                reject(err)
+            })
+        })
+    },
+}
 
 export default api

@@ -37,9 +37,9 @@
 							</button>
 						</div>
 					</div>
-					<form @submit="onSubmit" @reset="onReset">
-						<div class="bs-stepper-content fade">
-							<div id="user-email" class="content">
+          <div class="bs-stepper-content fade">
+            <form class="needs-validation">
+							<div id="user-email" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="user-email-trigger">
 								<div class="form-group">
 									<div class="form-floating">
 										<label class="text-uppercase">username</label>
@@ -47,41 +47,38 @@
 										</div>
 										<button @click="next" class="btn btn-primary">Next</button>
 									</div>
-								</div>
-								<div id="user-password" class="content">
-									<div class="form-group">
-										<div class="form-floating">
-											<label class="text-uppercase">password</label>
-											<input class="form-control" v-model="user.password" type="password" required>
-												<br />
-												<input class="form-control" v-model="re_pass" type="password" required>
-												</div>
-												<button @click="next" class="btn btn-primary">Next</button>
-											</div>
-										</div>
-										<div id="user-phone" class="content">
-											<div class="form-group">
-												<div class="form-floating">
-													<label class="text-uppercase">Phone Number</label>
-													<input class="form-control" v-model="user.phone_number" type="tel" required>
-													</div>
-													<button @click="next" class="btn btn-primary">Next</button>
-												</div>
-											</div>
-											<div id="user-code" class="content">
-												<div class="form-group">
-													<div class="form-floating">
-														<label class="text-uppercase">6 Digit Code</label>
-														<input class="form-control" v-model="code" type="text" maxlength="6"  required>
-														</div>
-														<button @click="next" class="btn btn-primary">Next</button>
-													</div>
-												</div>
-												<div id="step-6" class="content text-center">
-													<button type="submit" class="btn btn-primary mt-5">Submit</button>
-												</div>
-            </div>
-          </form>
+              </div>
+              <div id="user-password" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="user-password-trigger">
+                <div class="form-group">
+                  <div class="form-floating">
+                    <label class="text-uppercase">password</label>
+                    <input class="form-control" v-model="user.password" type="password" required>
+                    <br />
+                    <input class="form-control" v-model="re_pass" type="password" required>
+                  </div>
+                  <button @click="next" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+              <div id="user-phone" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="user-phone-trigger">
+                <div class="form-group">
+                  <div class="form-floating">
+                    <label class="text-uppercase">Phone Number</label>
+                    <input class="form-control" v-model="user.phone_number" type="tel" required>
+                    </div>
+                    <button @click="next" class="btn btn-primary">Next</button>
+                  </div>
+              </div>
+              <div id="user-code" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="user-code-trigger">
+                <div class="form-group">
+                  <div class="form-floating">
+                    <label class="text-uppercase">6 Digit Code</label>
+                    <input class="form-control" v-model="code" type="text" maxlength="6"  required>
+                    </div>
+                    <button @click="next" class="btn btn-primary">Next</button>
+                  </div>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="col-lg-12">
           <div class="py-3 text-center">
