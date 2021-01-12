@@ -1,0 +1,93 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bs-stepper/dist/css/bs-stepper.min.css';
+@import "vue-toastification/dist/index.css";
+
+
+//--------------------------------- Colors ------------------------------------------
+$primary: #658AEB;
+$accent:  #5863F8;
+$secondary: #EE9A1B;
+$complementary: #F18F01;
+$black: black;
+$dark: #313131;
+$sub-dark: #30304E;
+$light: #DDE6F1;
+$white: rgb(255, 255, 255);
+$white-70: rgba(255, 255, 255, 0.7);
+$medium: #9595AD;
+$primary-font-light: #C4C4C4;
+
+//--------------------------------- Fonts ------------------------------------------
+$primary-font: Avenir, 'normal';
+$secondary-font: null;
+
+
+//--------------------------------- Text ------------------------------------------
+h1 {
+    font-size: 24px;
+    line-height: 33px;
+    font-family: $primary-font;
+    font-weight: 800;
+    color: $primary-font-light;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 27px;
+    font-family: $primary-font;
+    font-weight: 800;
+    color: $primary-font-light;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $primary-font;
+    font-weight: 800;
+    color: $primary-font-light;
+}
+
+h4 {
+    font-family: $primary-font;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    color: $primary-font-light;
+}
+
+p {
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $primary-font-light;
+}
+
+.note {
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    color: $primary-font-light;
+}
+
+.caption {
+    font-family: $primary-font;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 24px;
+    color: $primary-font-light;
+}
+
+.text-shadow {
+    background: $primary-font-light;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+.card-shadow {
+    background: $primary-font-light;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.25);
+}
+.cover-shadow {
+    background: $primary-font-light;
+    box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+}
