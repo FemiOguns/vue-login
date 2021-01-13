@@ -1,28 +1,28 @@
 //--------------------------------- Colors -----------------------------------------
-    $theme-colors: (
+$theme-colors: (
         "primary": #658AEB,
         "secondary": #EE9A1B,
         "info":  #5863F8,
         "complementary": #F18F01,
         "black": #000000,
-        "dark": #313131,
+        "dark": #0B132B,
         "sub-dark": #30304E,
         "light": #DDE6F1,
         "white": #FFFFFF,
         "white-70": #ffffffb3,
         "warning": #9595AD,
         "lighter": #C4C4C4,
-    );
-    
-//--------------------------------- Global Varibles ---------------------------------
-$body-bg: theme-color("dark");
-$body-color: theme-color("white-70");
-    
-//--------------------------------- Fonts ------------------------------------------
-$primary-font: Avenir, 'normal';
-$secondary-font: null;
-
-//--------------------------------- Styles ------------------------------------------
+        );
+        
+        //--------------------------------- Global Varibles ---------------------------------
+        $body-bg: theme-color("dark");
+        $body-color: theme-color("white-70");
+        
+        //--------------------------------- Fonts ------------------------------------------
+        $primary-font: Avenir, 'normal';
+        $secondary-font: null;
+        
+        //--------------------------------- Styles ------------------------------------------
 h1 {
     font-size: 24px;
     line-height: 33px;
@@ -79,4 +79,4 @@ p {
     color: theme-color("lighter");
 }
 
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../../node_modules/bootstrap/scss/bootstrap';

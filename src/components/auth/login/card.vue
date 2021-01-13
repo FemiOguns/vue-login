@@ -25,12 +25,5 @@
 </script>
 
 <style lang="scss">
-#card {
-    position: absolute;
-    width: 100%;
-    height: 347px;
-    left: 0px;
-    top: 465px;
-    background: $dark;
-}
+
 </style>

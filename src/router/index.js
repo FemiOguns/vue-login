@@ -8,14 +8,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
-  },
-  {
-    path: '/register',
-    name: 'Register',
-    component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
+    path: '/auth',
+    name: 'Auth',
+    component: () => import(/* webpackChunkName: "auth" */ '../views/Auth.vue')
   }
 ]
 
@@ -25,7 +20,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.name == 'Home' && !store.state.isAuthenticated) next({ name: 'Login' })
+  if (to.name == 'Home' && !store.state.isAuthenticated) next({ name: 'Auth' })
   else next()
 })
 
