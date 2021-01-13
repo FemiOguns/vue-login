@@ -1,0 +1,82 @@
+//--------------------------------- Colors -----------------------------------------
+    $theme-colors: (
+        "primary": #658AEB,
+        "secondary": #EE9A1B,
+        "info":  #5863F8,
+        "complementary": #F18F01,
+        "black": #000000,
+        "dark": #313131,
+        "sub-dark": #30304E,
+        "light": #DDE6F1,
+        "white": #FFFFFF,
+        "white-70": #ffffffb3,
+        "warning": #9595AD,
+        "lighter": #C4C4C4,
+    );
+    
+//--------------------------------- Global Varibles ---------------------------------
+$body-bg: theme-color("dark");
+$body-color: theme-color("white-70");
+    
+//--------------------------------- Fonts ------------------------------------------
+$primary-font: Avenir, 'normal';
+$secondary-font: null;
+
+//--------------------------------- Styles ------------------------------------------
+h1 {
+    font-size: 24px;
+    line-height: 33px;
+    font-family:  theme-color("primary");
+    font-weight: 800;
+    color:  theme-color("lighter");
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 27px;
+    font-family: theme-color("primary");
+    font-weight: 800;
+    color:  theme-color("lighter");
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 20px;
+    font-family:  theme-color("primary");
+    font-weight: 800;
+    color:  theme-color("lighter");
+}
+
+h4 {
+    font-family: theme-color("primary");
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    color: theme-color("lighter");
+}
+
+p {
+    font-family: theme-color("primary");
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: theme-color("lighter");
+}
+
+.note {
+    font-family: theme-color("primary");
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    color: theme-color("lighter");
+}
+
+.caption {
+    font-family: theme-color("primary");
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 24px;
+    color: theme-color("lighter");
+}
+
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
