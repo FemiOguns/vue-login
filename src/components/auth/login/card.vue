@@ -1,5 +1,5 @@
 <template>
-    <div id="card" class="card-shadow">
+    <div id="card" class="card shadow shadow-lg bg-dark">
         
     </div>
 </template>
@@ -13,13 +13,13 @@
             return { toast }
         },
         data: ()=> ({
-            tmp: {
+            cred: {
                 email: null,
                 password: null
             }
         }),
         methods: {
-
+    
         }
     }
 </script>

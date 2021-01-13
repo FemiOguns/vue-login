@@ -1,12 +1,14 @@
 <template>
-    <div id="auth" :class="[{'background-image': require('@/assets/img/auth-bg.png')},'bg-dark']">
-        <div class="container">
-            <img :src="require('@/assets/img/logo.svg')" class="logo" >
-            <div ref="gateway" class="container text-center">
-                <h1 class="text-white-70">Cartoons to live for</h1>
+    <div id="auth" class="container bg-dark">
+        <div class="text-center">
+            <img :src="require('@/assets/img/logo.svg')" class="text-center" >
+        </div>
+        <div class="position-absolute bottom-0 card shadow shadow-lg bg-dark rounded-top">
+            <div ref="gateway" class="text-center">
+                <h1 class="text-white">Cartoons to live for</h1>
                 <div class="py-3 d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary">Sign Up</button>
-                    <p class="caption">Start streaming for $9/month or $90/year</p>
+                    <p class="text-medium">Start streaming for $9/month or $90/year</p>
                     <button class="btn btn-primary-outline">Log in</button>
                 </div>
             </div>
@@ -31,5 +33,10 @@ import { defineAsyncComponent, ref, onMounted } from 'vue';
 </script>
 
 <style lang="scss">
+h1 {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 800;
+}
 
 </style>

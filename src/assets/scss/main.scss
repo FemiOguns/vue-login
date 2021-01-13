@@ -1,82 +1,71 @@
 //--------------------------------- Colors -----------------------------------------
 $theme-colors: (
-        "primary": #658AEB,
-        "secondary": #EE9A1B,
-        "info":  #5863F8,
-        "complementary": #F18F01,
-        "black": #000000,
-        "dark": #0B132B,
-        "sub-dark": #30304E,
-        "light": #DDE6F1,
-        "white": #FFFFFF,
-        "white-70": #ffffffb3,
-        "warning": #9595AD,
-        "lighter": #C4C4C4,
-        );
+    "primary": #658AEB,
+    "secondary": #EE9A1B,
+    "info":  #5863F8,
+    "complementary": #F18F01,
+    "black": #000000,
+    "dark": #0B132B,
+    "sub-dark": #30304E,
+    "light": #DDE6F1,
+    "white": #FFFFFF,
+    "white-70": #ffffffb3,
+    "medium": #9595AD,
+    "lighter": #C4C4C4,
+);
         
-        //--------------------------------- Global Varibles ---------------------------------
-        $body-bg: theme-color("dark");
-        $body-color: theme-color("white-70");
+//--------------------------------- Global Varibles ---------------------------------
+$body-bg: theme-color("dark");
+$body-color: theme-color("white-70");
         
-        //--------------------------------- Fonts ------------------------------------------
-        $primary-font: Avenir, 'normal';
-        $secondary-font: null;
-        
-        //--------------------------------- Styles ------------------------------------------
+//--------------------------------- Types ------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap');
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 h1 {
     font-size: 24px;
     line-height: 33px;
-    font-family:  theme-color("primary");
     font-weight: 800;
-    color:  theme-color("lighter");
 }
 
 h2 {
     font-size: 20px;
     line-height: 27px;
-    font-family: theme-color("primary");
     font-weight: 800;
-    color:  theme-color("lighter");
 }
 
 h3 {
     font-size: 16px;
     line-height: 20px;
-    font-family:  theme-color("primary");
     font-weight: 800;
-    color:  theme-color("lighter");
 }
 
 h4 {
-    font-family: theme-color("primary");
     font-weight: 800;
     font-size: 14px;
     line-height: 20px;
-    color: theme-color("lighter");
 }
 
 p {
-    font-family: theme-color("primary");
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    color: theme-color("lighter");
 }
 
+//--------------------------------- Styles ------------------------------------------
 .note {
-    font-family: theme-color("primary");
-    font-weight: 500;
+    font-weight: 600;
     font-size: 10px;
     line-height: 14px;
-    color: theme-color("lighter");
 }
 
 .caption {
-    font-family: theme-color("primary");
     font-weight: normal;
     font-size: 13px;
     line-height: 24px;
-    color: theme-color("lighter");
 }
 
 @import '../../../node_modules/bootstrap/scss/bootstrap';
