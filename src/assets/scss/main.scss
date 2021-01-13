@@ -13,15 +13,12 @@ $theme-colors: (
     "medium": #9595AD,
     "lighter": #C4C4C4,
 );
-        
-//--------------------------------- Global Varibles ---------------------------------
-$body-bg: theme-color("dark");
-$body-color: theme-color("white-70");
-        
+
+$body-bg: map-get($map: $theme-colors, $key: 'dark');
 //--------------------------------- Types ------------------------------------------
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap');
 
-* {
+body {
     font-family: 'Nunito Sans', sans-serif;
 }
 

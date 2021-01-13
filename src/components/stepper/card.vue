@@ -15,15 +15,16 @@
                             </li>
                         </ul>
                         <!-- end stepper header--> 
-                        <!-- Tab panes -->
+                        <!-- stepper content -->
                         <div class="tab-content">
                             <div v-for="item in content" :key="content.indexOf(item)" role="tabpanel" class="tab-pane active" :id="item.title">
                                 <div class="design-process-content">
                                     <h3 class="semi-bold">Discovery</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                                    <p>{{item.body}}</p>
                                 </div>
                             </div>
                         </div>
+                        <!-- end stepper content -->
                     </div>
                 </div>
             </div>
