@@ -1,10 +1,10 @@
 <template>
-    <div id="auth" :class="[{backgroundImage: require('@/assets/img/auth-bg.png')},'bg-dark']">
+    <div id="auth" :class="[{'background-image': require('@/assets/img/auth-bg.png')},'bg-dark']">
         <div class="container">
             <img :src="require('@/assets/img/logo.svg')" class="logo" >
             <div ref="gateway" class="container text-center">
                 <h1 class="text-white-70">Cartoons to live for</h1>
-                <div class="py-3">
+                <div class="py-3 d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary">Sign Up</button>
                     <p class="caption">Start streaming for $9/month or $90/year</p>
                     <button class="btn btn-primary-outline">Log in</button>
