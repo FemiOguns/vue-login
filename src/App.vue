@@ -15,37 +15,34 @@ export default {
 
 * {
     font-family: 'Nunito Sans', sans-serif;
+
+
+  h2 {
+      font-size: 20px;
+      line-height: 27px;
+      font-weight: 800;
+  }
+
+  h3 {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 800;
+  }
+
+  h4 {
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 20px;
+  }
+
+  p {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+  }
 }
 
-h1 {
-    font-size: 24px;
-    line-height: 33px;
-    font-weight: 800;
-}
 
-h2 {
-    font-size: 20px;
-    line-height: 27px;
-    font-weight: 800;
-}
-
-h3 {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 800;
-}
-
-h4 {
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-p {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-}
 
   #app {
     width: 100%;

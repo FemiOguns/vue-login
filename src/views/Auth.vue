@@ -1,20 +1,20 @@
 <template>
-    <div id="auth" class="container">
-        <img :src="require('@/assets/img/auth-bg.png')" class="img-backdrop">
-        <div class="text-center">
-            <img :src="require('@/assets/img/logo.svg')" class="text-center logo" >
-        </div>
-        <div class="card bg-dark w-100 fixed-bottom rounded-top text-center">
-            <div class="card-body py-3">
-                <h1 class="text-white">Cartoons to live for</h1>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary">Sign Up</button>
-                    <p class="text-medium caption">Start streaming for $9/month or $90/year</p>
-                    <button class="btn btn-outline-primary">Log in</button>
+    <div id="auth">
+        <div class="container">
+            <img :src="require('@/assets/img/auth-bg.png')" class="img-backdrop">
+            <img :src="require('@/assets/img/logo.svg')" class="logo" >
+            <div class="card fixed-bottom bg-dark shadow shadow-lg rounded-top">
+                <div class="card-body py-3">
+                    <h1 class="text-white">Cartoons to live for</h1>
+                    <button class="btn btn-primary btn-block">Sign Up</button>
+                    <div class="text-medium text-center caption py-2">
+                        <p>Start streaming for $9/month or $90/year</p>
+                    </div>
+                    <button class="btn btn-outline-primary btn-block">Log in</button>
                 </div>
+                <login-card ref="login" />
+                <register-card ref="register" />
             </div>
-            <login-card ref="login" />
-            <register-card ref="register" />
         </div>
     </div>
 </template>
@@ -39,14 +39,19 @@ import { defineAsyncComponent, ref, onMounted } from 'vue';
     height: 100%;
 }
 .logo {
-    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .img-backdrop {
-    z-index: -1000;
     position: absolute;
+    z-index: -1000;
     top: 0;
     left: 0;
-    background: cover center;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
     overflow: hidden;
 }
 </style>
