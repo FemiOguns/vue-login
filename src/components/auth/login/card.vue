@@ -1,5 +1,5 @@
 <template>
-    <div id="card" class="card shadow shadow-lg bg-dark">
+    <div id="card" class="">
         
     </div>
 </template>

@@ -3,32 +3,26 @@
         <div class="container">
             <img :src="require('@/assets/img/auth-bg.png')" class="img-backdrop">
             <img :src="require('@/assets/img/logo.svg')" class="logo" >
-            <div class="card fixed-bottom bg-dark shadow shadow-lg rounded-top">
-                <div class="card-body py-3">
-                    <h1 class="text-white">Cartoons to live for</h1>
-                    <button class="btn btn-primary btn-block">Sign Up</button>
-                    <div class="text-medium text-center caption py-2">
-                        <p>Start streaming for $9/month or $90/year</p>
-                    </div>
-                    <button class="btn btn-outline-primary btn-block">Log in</button>
-                </div>
-                <login-card ref="login" />
-                <register-card ref="register" />
-            </div>
+                <gateway ref="gateway" />
         </div>
     </div>
 </template>
 
 <script>
 import { defineAsyncComponent, ref, onMounted } from 'vue';
+
     export default {
         name: 'login',
-        setup(){
-            return {}
-        },
         components: {
-            'login-card': defineAsyncComponent(() => import('@/components/auth/login/card.vue')),
-            'register-card': defineAsyncComponent(() => import('@/components/auth/register/card.vue'))
+            'gateway': defineAsyncComponent(() => import('@/components/auth/card.vue')),
+        },
+        data: () => ({
+            
+        }),
+        methods: {
+            swapComponent: function(component) {
+                this.currentComponent = component;
+            }
         }
     }
 </script>

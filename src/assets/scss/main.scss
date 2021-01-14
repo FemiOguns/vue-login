@@ -13,44 +13,44 @@ $theme-colors: (
     "medium": #9595AD,
     "lighter": #C4C4C4,
 );
+//--------------------------------- Global -----------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap');
+:root {
+   * { font-family: 'Nunito Sans', sans-serif; } 
+
+    
+    h1 {
+        font-size: 24px;
+        line-height: 33px;
+        font-weight: 800;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 800;
+    }
+
+    h4 {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
 
 $body-bg: map-get($map: $theme-colors, $key: 'dark');
-//--------------------------------- Types ------------------------------------------
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap');
-
-body {
-    font-family: 'Nunito Sans', sans-serif;
-}
-
-h1 {
-    font-size: 24px;
-    line-height: 33px;
-    font-weight: 800;
-}
-
-h2 {
-    font-size: 20px;
-    line-height: 27px;
-    font-weight: 800;
-}
-
-h3 {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 800;
-}
-
-h4 {
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-p {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-}
 
 //--------------------------------- Styles ------------------------------------------
 .note {
