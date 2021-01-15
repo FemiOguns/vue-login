@@ -3,13 +3,13 @@
         <div class="container">
             <img :src="require('@/assets/img/auth-bg.png')" class="img-backdrop">
             <img :src="require('@/assets/img/logo.svg')" class="logo" >
-                <gateway ref="gateway" />
+                <gateway />
         </div>
     </div>
 </template>
 
 <script>
-import { defineAsyncComponent, ref, onMounted } from 'vue';
+import { defineAsyncComponent, } from 'vue';
 
     export default {
         name: 'login',
@@ -20,9 +20,7 @@ import { defineAsyncComponent, ref, onMounted } from 'vue';
             
         }),
         methods: {
-            swapComponent: function(component) {
-                this.currentComponent = component;
-            }
+
         }
     }
 </script>
@@ -45,7 +43,7 @@ import { defineAsyncComponent, ref, onMounted } from 'vue';
     left: 0;
     background-position: center; 
     background-repeat: no-repeat; 
-    background-size: cover; 
+    background-size: cover fit; 
     overflow: hidden;
 }
 </style>
