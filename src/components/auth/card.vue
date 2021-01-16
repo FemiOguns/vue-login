@@ -1,16 +1,18 @@
 <template>
     <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg">
         <div class="card-body py-3" v-if="!selected.login && !selected.register">
-            <h1 class="text-white">Cartoons to live for</h1>
-            <button class="btn btn-primary btn-block" @click="swap('register')">Sign Up</button>
-            <div class="text-medium py-2">
+            <div class="card-title py-3">
+                <h1 class="text-white">Cartoons to live for</h1>
+            </div>
+            <button class="btn btn-primary my-2 btn-block" @click="swap('register')">Sign Up</button>
+            <div class="text-medium my-3">
                 Start streaming for $9/month or $90/year
             </div>
             <button class="btn btn-outline-primary btn-block" @click="swap('login')">Log in</button>
         </div>
         <div v-if="selected.login || selected.register"> 
-            <login-card :class="{'d-none': !selected.login}"></login-card>
-            <register-card :class="{'d-none': !selected.register}"></register-card>
+            <login-card :showMe="selected.login"></login-card>
+            <register-card :showMe="selected.register"></register-card>
         </div>
     </div>
 </template>
@@ -55,5 +57,6 @@ import { defineAsyncComponent, ref } from 'vue';
 <style>
     .card {
         border-radius: 25px;
+        min-height: 40vh;
     }
 </style>

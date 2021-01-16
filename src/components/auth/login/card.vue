@@ -1,9 +1,12 @@
 <template>
-    <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
+    <div id="card" v-show="visible" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
         <div class="pt-3">
             <span @click="goBack" class="badge rounded-pill bg-accent text-medium">Go Back</span>
         </div>
         <form class="card-body" @submit="login" @reset="resetForm">
+            <div class="py-5 text-center h1">
+                📧
+            </div>
             <div class="form-floating mb-3">
                 <input type="email" v-model="username" class="form-control border border-primary border-bottom" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
@@ -35,10 +38,9 @@
     import { useStore } from 'vuex'
     export default {
         name: 'card',
-        setup() {
-            const toast = useToast();
-            const store = useStore()
-            return { toast, store }
+        setup(props) {
+            console.log(props.showME)
+            return { toast: useToast(), store: useStore(), visible: props.showME }
         },
         data: ()=> ({
             username: null,
@@ -58,7 +60,7 @@
                 this.password = null
             },
             goBack() {
-                location.reload()
+                this.$parent.emit('showME', false)
             }
         }
     }
@@ -68,6 +70,11 @@
     .back {
         width: 15px;
         height: 12px;
+    }
+
+    .card {
+        border-radius: 25px;
+        min-height: 40vh;
     }
 
 </style>

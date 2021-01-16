@@ -64,5 +64,6 @@ $body-bg: map-get($map: $theme-colors, $key: 'dark');
     font-size: 13px;
     line-height: 24px;
 }
+
 //------------------------------ Plugins ---------------------------------------------
 @import '../../../node_modules/bootstrap/scss/bootstrap';

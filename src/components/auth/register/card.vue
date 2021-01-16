@@ -1,5 +1,5 @@
 <template>
-    <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
+    <div id="card" v-show="visible" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
         <div class="card-body">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -40,9 +40,10 @@
     import { useStore } from 'vuex'
     export default {
         name: 'card',
-        setup() {
+        setup(context,props) {
             const toast = useToast();
-            return { toast }
+            const visible = props.showME
+            return { toast, visible }
         },
         data: ()=> ({
             user: {
