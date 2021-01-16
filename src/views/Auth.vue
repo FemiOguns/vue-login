@@ -3,7 +3,7 @@
         <div class="container">
             <img :src="require('@/assets/img/auth-bg.png')" class="img-backdrop">
             <img :src="require('@/assets/img/logo.svg')" class="logo" >
-                <gateway />
+            <gateway />
         </div>
     </div>
 </template>
@@ -31,10 +31,8 @@ import { defineAsyncComponent, } from 'vue';
     height: 100%;
 }
 .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute; 
+    padding: 40% 30%;
 }
 .img-backdrop {
     position: absolute;
