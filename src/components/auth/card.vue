@@ -1,6 +1,6 @@
 <template>
-    <div id="card" class="card text-center bg-dark shadow shadow-lg">
-        <div class="card-body py-3">
+    <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg">
+        <div class="card-body py-3" v-if="!selected.login && !selected.register">
             <h1 class="text-white">Cartoons to live for</h1>
             <button class="btn btn-primary btn-block" @click="swap('register')">Sign Up</button>
             <div class="text-medium py-2">
@@ -8,9 +8,9 @@
             </div>
             <button class="btn btn-outline-primary btn-block" @click="swap('login')">Log in</button>
         </div>
-        <div> 
-            <login-card :class="['d-none', {'d-block': selected.login}]"></login-card>
-            <register-card :class="['d-none', {'d-block': selected.register}]"></register-card>
+        <div v-if="selected.login || selected.register"> 
+            <login-card :class="{'d-none': !selected.login}"></login-card>
+            <register-card :class="{'d-none': !selected.register}"></register-card>
         </div>
     </div>
 </template>
@@ -53,9 +53,7 @@ import { defineAsyncComponent, ref } from 'vue';
 </script>
 
 <style>
-    #card {
+    .card {
         border-radius: 25px;
-        top: 60vh;
-        height: auto;
     }
 </style>

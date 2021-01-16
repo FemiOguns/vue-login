@@ -1,6 +1,8 @@
 <template>
     <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
-        <!-- icon here -->
+        <div class="pt-3">
+            <span @click="goBack" class="badge rounded-pill bg-accent text-medium">Go Back</span>
+        </div>
         <form class="card-body" @submit="login" @reset="resetForm">
             <div class="form-floating mb-3">
                 <input type="email" v-model="username" class="form-control border border-primary border-bottom" id="floatingInput" placeholder="name@example.com">
@@ -45,7 +47,7 @@
         methods: {
             login(evt) {
                 evt.preventDefault()
-                this.store.dispatch('login',{email: this.username, password}).then((res) => {
+                this.store.dispatch('login',{email: this.username, password }).then((res) => {
                     if(res) {
                         this.toast.success('We did it')
                     }
@@ -54,11 +56,18 @@
             resetForm(evt) {
                 this.username = null
                 this.password = null
+            },
+            goBack() {
+                location.reload()
             }
         }
     }
 </script>
 
 <style lang="scss">
+    .back {
+        width: 15px;
+        height: 12px;
+    }
 
 </style>

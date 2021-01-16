@@ -1,6 +1,6 @@
 <template>
     <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
-        <form class="card-body" @submit="register" @reset="resetForm">
+        <div class="card-body">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-link active" id="stepper-email-tab" data-bs-toggle="tab" href="#stepper-email" role="tab" aria-controls="stepper-email" aria-selected="true">Email</a>
@@ -18,21 +18,26 @@
                 </div>
                 <div class="tab-pane fade" id="stepper-password" role="tabpanel" aria-labelledby="stepper-password-tab">
                     <div class="form-floating">
-                        <input type="email" v-model="username" class="form-control border border-primary border-bottom" placeholder="password">
+                        <input type="password" v-model="user.password" class="form-control border border-primary border-bottom" placeholder="password">
                         <label for="floatingInput">Password</label>
                     </div>
                     <button @click="next" class="btn btn-primary btn-block">Next</button>
                 </div>
                 <div class="tab-pane fade" id="stepper-verify" role="tabpanel" aria-labelledby="stepper-verify-tab">
-
+                    <div class="form-floating">
+                        <input type="tel" v-model="user.phone" class="form-control border border-primary border-bottom" placeholder="password">
+                        <label for="floatingInput">Phone</label>
+                    </div>
+                    <button @click="next" class="btn btn-primary btn-block">Next</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </template>
 
 <script>
     import { useToast } from 'vue-toastification'
+    import { useStore } from 'vuex'
     export default {
         name: 'card',
         setup() {
@@ -40,7 +45,7 @@
             return { toast }
         },
         data: ()=> ({
-            tmp: {
+            user: {
                 email: null,
                 password: null,
                 phone_number: null
@@ -50,6 +55,11 @@
         methods: {
             confirm_password() {
 
+            },
+            register() {
+                this.store.dispatch('register', {email: user.email, password: user.password}).then((res) => {
+                    console.log(res)
+                })
             }
         }
     }
