@@ -15,12 +15,6 @@ import { defineAsyncComponent, } from 'vue';
         name: 'login',
         components: {
             'gateway': defineAsyncComponent(() => import('@/components/auth/card.vue')),
-        },
-        data: () => ({
-            
-        }),
-        methods: {
-
         }
     }
 </script>

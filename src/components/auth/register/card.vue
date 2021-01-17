@@ -1,5 +1,5 @@
 <template>
-    <div id="card" v-show="visible" class="card text-center fixed-bottom bg-dark shadow shadow-lg rounded-top">
+    <div id="card" class="card text-center fixed-bottom bg-dark shadow shadow-lg">
         <div class="card-body">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -8,24 +8,24 @@
                     <a class="nav-link" id="stepper-verify-tab" data-bs-toggle="tab" href="#stepper-verify" role="tab" aria-controls="stepper-verify" aria-selected="false">Verify</a>
                 </div>
             </nav>
-            <div class="tab-content" id="nav-tabContent">
+            <div class="tab-content py-5" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="stepper-email" role="tabpanel" aria-labelledby="stepper-email-tab">
                     <div class="form-floating">
-                        <input type="email" v-model="user.email" class="form-control border border-primary border-bottom" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <input type="email" v-model="user.email" id="email" class="form-control" placeholder="name@example.com">
+                        <label for="email">Email address</label>
                     </div>
                     <button @click="next" class="btn btn-primary btn-block">Next</button>
                 </div>
                 <div class="tab-pane fade" id="stepper-password" role="tabpanel" aria-labelledby="stepper-password-tab">
                     <div class="form-floating">
-                        <input type="password" v-model="user.password" class="form-control border border-primary border-bottom" placeholder="password">
-                        <label for="floatingInput">Password</label>
+                        <input type="password" v-model="user.password" id="password" class="form-control" placeholder="password">
+                        <label for="password">Password</label>
                     </div>
                     <button @click="next" class="btn btn-primary btn-block">Next</button>
                 </div>
                 <div class="tab-pane fade" id="stepper-verify" role="tabpanel" aria-labelledby="stepper-verify-tab">
                     <div class="form-floating">
-                        <input type="tel" v-model="user.phone" class="form-control border border-primary border-bottom" placeholder="password">
+                        <input type="tel" v-model="user.phone" class="form-control" placeholder="555-555-5555">
                         <label for="floatingInput">Phone</label>
                     </div>
                     <button @click="next" class="btn btn-primary btn-block">Next</button>
@@ -40,10 +40,9 @@
     import { useStore } from 'vuex'
     export default {
         name: 'card',
-        setup(context,props) {
+        setup() {
             const toast = useToast();
-            const visible = props.showME
-            return { toast, visible }
+            return { toast }
         },
         data: ()=> ({
             user: {
@@ -65,3 +64,15 @@
         }
     }
 </script>
+
+<style>
+    .back {
+        width: 15px;
+        height: 12px;
+    }
+
+    .card {
+        border-radius: 25px;
+        min-height: 40vh;
+    }
+</style>

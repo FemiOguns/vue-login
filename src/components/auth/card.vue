@@ -9,10 +9,10 @@
                 Start streaming for $9/month or $90/year
             </div>
             <button class="btn btn-outline-primary btn-block" @click="swap('login')">Log in</button>
-        </div>
+        </div> 
         <div v-if="selected.login || selected.register"> 
-            <login-card :showMe="selected.login"></login-card>
-            <register-card :showMe="selected.register"></register-card>
+            <login-card v-show="selected.login"></login-card>
+            <register-card v-show="selected.register"></register-card>
         </div>
     </div>
 </template>
